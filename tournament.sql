@@ -20,23 +20,19 @@ WHERE
 
 DROP DATABASE IF EXISTS tournament;
 CREATE DATABASE tournament;
-
-DROP TABLE IF EXISTS players CASCADE;
+\c tournament
 
 CREATE TABLE players (
     id serial,
     name varchar,
-    wins integer,
-    losses integer,
     PRIMARY KEY(id)
 );
 
-DROP TABLE IF EXISTS matches CASCADE;
 
 CREATE TABLE matches (
     match_id serial,
-    winner_id serial references players(id) ON DELETE CASCADE,
-    losser_id serial references players(id) ON DELETE CASCADE,
+    winner_id integer references players(id) ON DELETE CASCADE,
+    losser_id integer references players(id) ON DELETE CASCADE,
     primary key(match_id)
 );
 

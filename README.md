@@ -15,6 +15,11 @@
 
 ## Running the project!
  * Prerequisities: python2.7, PostgreSQL(psql (9.3.13)
+ * In order to create the schema in PostgreSQL, you need to:
+ 	1- enter in the postgresql db using the command psql using the terminal
+ 		$ psql
+ 	2- once inside, import the sql script using the command \i [nameOfTheScript.sql]
+ 		$ vagrant=> \i tournament.sql
  * To run the series of tests defined in this test suite, run the program from the command line 
     $ python tournament_test.py 
 
