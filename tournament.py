@@ -52,9 +52,8 @@ def registerPlayer(name):
     """Returns the number of players currently registered."""
     conn = connect()
     c = conn.cursor()
-    c.execute(
-        "INSERT INTO players (name, wins, losses) " +
-        " VALUES (%s, %s, %s)", (name, 0, 0))
+    c.execute("INSERT INTO players (name) VALUES (%s);", (name,))
+
     conn.commit()
     conn.close()
 
